@@ -21,7 +21,6 @@
 - [Study Area](#-study-area)
 - [Architecture](#-architecture)
 - [Dataset](#-dataset)
-- [Project Structure](#-project-structure)
 - [Installation](#-installation)
 - [Usage](#-usage)
 - [Results](#-results)
@@ -139,48 +138,6 @@ Data was retrieved from the **NASA POWER Daily Meteorology API**:
 |`day_sin`, `day_cos`                 |Sinusoidal day-of-year encoding         |
 |`TEMP_LAG1`, `TEMP_LAG3`, `TEMP_LAG7`|Lagged temperature at 1, 3, 7 days prior|
 |`TEMP_ROLL7`                         |7-day rolling mean temperature          |
-
------
-
-## 📁 Project Structure
-
-```
-climate-prediction-weighted-ensemble/
-│
-├── 📂 data/
-│   ├── raw/                    # Raw NASA POWER data (per city)
-│   └── processed/              # Preprocessed & feature-engineered data
-│
-├── 📂 models/
-│   ├── big_lstm.py             # BigLSTM architecture
-│   ├── big_gru.py              # BigGRU architecture
-│   ├── weather_transformer.py  # WeatherTransformer architecture
-│   └── ensemble.py             # Weighted ensemble module
-│
-├── 📂 notebooks/
-│   ├── 01_eda.ipynb            # Exploratory Data Analysis
-│   ├── 02_feature_engineering.ipynb
-│   ├── 03_training.ipynb       # Model training pipeline
-│   ├── 04_evaluation.ipynb     # Results & visualizations
-│   └── jawa_weather_multikota.ipynb  # Full multi-city pipeline
-│
-├── 📂 checkpoints/
-│   └── weights/                # Saved ensemble weights (JSON)
-│
-├── 📂 results/
-│   ├── metrics/                # RMSE, MAE, R², MAPE per city/split
-│   └── figures/                # Heatmaps, residual plots, predictions
-│
-├── 📂 src/
-│   ├── data_loader.py          # NASA POWER API fetcher
-│   ├── preprocessing.py        # Feature engineering pipeline
-│   ├── trainer.py              # Training loop & early stopping
-│   └── evaluator.py            # Metrics & visualization
-│
-├── requirements.txt
-├── config.yaml                 # Hyperparameters & settings
-└── README.md
-```
 
 -----
 
